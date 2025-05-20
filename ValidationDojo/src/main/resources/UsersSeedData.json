@@ -1,0 +1,109 @@
+[
+  {
+    "id": "1e7b3c8e-8f3a-4b6a-9c2d-1a2b3c4d5e6f",
+    "firstName": "Geir",
+    "lastName": "Nordmann",
+    "dob": "1985-03-15",
+    "gender": "male",
+    "username": "ggnordmann",
+    "email": "gg.nordmann@example.com",
+    "phone": "12345678",
+    "bio": "Loves skiing and hiking in the mountains.",
+    "followers": ["2f8a4b6c-7d9e-4a1a-b3c4-5e6f7e8a9b0c"],
+    "following": ["2f8a4b6c-7d9e-4a1a-b3c4-5e6f7e8a9b0c"]
+  },
+  {
+    "id": "2f8a4b6c-7d9e-4a1a-b3c4-5e6f7e8a9b0c",
+    "firstName": "Kari-Anne",
+    "lastName": "Nordmann",
+    "dob": "1990-07-22",
+    "gender": "female",
+    "username": "karianordmann",
+    "email": "karia.nordmann@example.com",
+    "phone": "87654321",
+    "bio": "Enjoys painting and photography.",
+    "followers": ["1e7b3c8e-8f3a-4b6a-9c2d-1a2b3c4d5e6f"],
+    "following": [
+      "1e7b3c8e-8f3a-4b6a-9c2d-1a2b3c4d5e6f",
+      "3c4d5e6f-8e1f-4d2a-9f7e-b0d4c5a6e7f8"
+    ]
+  },
+  {
+    "id": "3c4d5e6f-8e1f-4d2a-9f7e-b0d4c5a6e7f8",
+    "firstName": "Matti",
+    "lastName": "Virtanen",
+    "dob": "1982-11-05",
+    "gender": "male",
+    "username": "mattivirtanen",
+    "email": "matti.virtanen@example.com",
+    "phone": "11223344",
+    "bio": "Avid reader and history enthusiast.",
+    "followers": ["2f8a4b6c-7d9e-4a1a-b3c4-5e6f7e8a9b0c"],
+    "following": []
+  },
+  {
+    "id": "4b6c7d9e-1a2b-4c4d-9a3e-7f8b9c0d1e2f",
+    "firstName": "Sigridur",
+    "lastName": "Jónsdóttir",
+    "dob": "1995-02-18",
+    "gender": "female",
+    "username": "sigridurjonsdottir",
+    "email": "sigridur.jonsdottir@example.com",
+    "phone": "55667788",
+    "bio": "Passionate about cooking and baking.",
+    "followers": [],
+    "following": ["5e6f7a8b-3c4d-4d5e-9f6a-1b2c3d4e5f6a"]
+  },
+  {
+    "id": "5e6f7a8b-3c4d-4d5e-9f6a-1b2c3d4e5f6a",
+    "firstName": "Erik",
+    "lastName": "Johansen",
+    "dob": "1988-09-12",
+    "gender": "male",
+    "username": "erikjohansen",
+    "email": "erik.johansen@example.com",
+    "phone": "66778899",
+    "bio": "Tech enthusiast and gamer.",
+    "followers": ["4b6c7d9e-1a2b-4c4d-9a3e-7f8b9c0d1e2f"],
+    "following": []
+  },
+  {
+    "id": "6f7e8a9b-0d1c-4b5e-9f7a-3c2d1e4f5b6a",
+    "firstName": "Ingrid",
+    "lastName": "Berg",
+    "dob": "1993-06-30",
+    "gender": "female",
+    "username": "ingridberg",
+    "email": "ingrid.berg@example.com",
+    "phone": "77889900",
+    "bio": "Loves traveling and exploring new cultures.",
+    "followers": [],
+    "following": ["7e8a9b0c-1d2e-4f5a-9b3c-0d1e2f3a4b5c"]
+  },
+  {
+    "id": "7e8a9b0c-1d2e-4f5a-9b3c-0d1e2f3a4b5c",
+    "firstName": "Lars",
+    "lastName": "Olsen",
+    "dob": "1980-01-25",
+    "gender": "male",
+    "username": "larsolsen",
+    "email": "lars.olsen@example.com",
+    "phone": "88990011",
+    "bio": "Enjoys fishing and outdoor activities.",
+    "followers": ["6f7e8a9b-0d1c-4b5e-9f7a-3c2d1e4f5b6a"],
+    "following": []
+  },
+  {
+    "id": "8e9f0a1b-2c3d-4e5f-9a6b-1c2d3e4f5a6b",
+    "firstName": "Helga",
+    "lastName": "Eiríksdóttir",
+    "dob": "1997-12-10",
+    "gender": "female",
+    "username": "helgaeiriksdottir",
+    "email": "helga.eiriksdottir@example.com",
+    "phone": "99001122",
+    "bio": "Fitness enthusiast and yoga instructor.",
+    "followers": [],
+    "following": []
+  }
+]

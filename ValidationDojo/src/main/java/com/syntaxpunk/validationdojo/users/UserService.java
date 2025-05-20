@@ -19,21 +19,33 @@ public class UserService {
         return userRepository.count() == 0;
     }
 
-    public User getUserById(String id) {
+    public User getById(String id) {
         return userRepository.findById(id).orElse(null);
     }
 
-    public Page<User> list(Pageable pageable) {
+    public List<User> all() {
+        return userRepository.findAll();
+    }
+
+    public Page<User> page(Pageable pageable) {
         return userRepository.findAll(pageable);
     }
 
-    public boolean saveUser(User user) {
+    public void save(User user) {
+        var existing = userRepository.findByEmail(user.getEmail());
+
+        if (existing.isPresent()) {
+            throw new UnsupportedOperationException("User with this email already exists");
+        }
+
         userRepository.save(user);
-        return true;
     }
 
-    public boolean saveUsers(List<User> users) {
+    public void saveList(List<User> users) {
         userRepository.saveAll(users);
-        return true;
+    }
+
+    public void delete(String id) {
+        userRepository.deleteById(id);
     }
 }

@@ -3,6 +3,8 @@ package com.syntaxpunk.validationdojo.users;
 import com.syntaxpunk.validationdojo.users.dtos.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, String> {
+import java.util.Optional;
 
+public interface UserRepository extends JpaRepository<User, String> {
+    public Optional<User> findByEmail(String email);
 }

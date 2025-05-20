@@ -13,7 +13,10 @@ import java.util.List;
 public class CreateUserDto {
     private String firstName;
     private String lastName;
+    private LocalDate dob;
+    private String gender;
     private String username;
     private String email;
-    private LocalDate dob;
+    private String phone;
+    private String bio;
 }
