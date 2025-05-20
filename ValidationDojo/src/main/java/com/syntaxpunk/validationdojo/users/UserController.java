@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @RestController()
@@ -20,8 +21,18 @@ public class UserController {
     }
 
     @GetMapping()
-    public ResponseEntity<List<User>> getUsers() {
-        return ResponseEntity.ok(_userService.all());
+    public ResponseEntity<List<UserResponseDto>> getUsers() {
+        var users = _userService.all();
+
+        if (users.isEmpty()) {
+            return ResponseEntity.ok(Collections.emptyList());
+        }
+
+        var results = users.stream()
+                .map(UserResponseDto::from)
+                .toList();
+
+        return ResponseEntity.ok(results);
     }
 
     @GetMapping("/{id}")
