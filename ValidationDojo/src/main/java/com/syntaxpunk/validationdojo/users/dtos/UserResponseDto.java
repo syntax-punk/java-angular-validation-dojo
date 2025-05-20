@@ -2,7 +2,6 @@ package com.syntaxpunk.validationdojo.users.dtos;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
-
 import java.time.LocalDate;
 
 @Accessors(chain = true)

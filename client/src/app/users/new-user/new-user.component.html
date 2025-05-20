@@ -1,0 +1,119 @@
+<div class="w-full p-2 pt-6 md:max-w-md mx-auto">
+  <form [formGroup]="newUserForm" class="w-[32rem] px-6 py-2 border border-slate-100 rounded-md shadow-md bg-slate-50">
+    <div class="mt-4 grid grid-cols-1 gap-6">
+      <div>
+        <label class="simple-form-label required">First Name</label>
+        <input
+          class="simple-form-field w-full"
+          formControlName="firstName"
+          type="text"
+          name="firstName"
+          id="firstName"
+          autocomplete="off"
+          setfocus
+        />
+        <app-form-field-error [fGroup]="newUserForm" cName="firstName" />
+      </div>
+
+      <div>
+        <label class="simple-form-label required">Last Name</label>
+        <input
+          class="simple-form-field w-full"
+          formControlName="lastName"
+          type="text"
+          name="lastName"
+          id="lastName"
+          autocomplete="off"
+        />
+        <app-form-field-error [fGroup]="newUserForm" cName="lastName" />
+      </div>
+
+      <div>
+        <label class="simple-form-label required">Username</label>
+        <input
+          class="simple-form-field w-full"
+          formControlName="username"
+          type="text"
+          name="username"
+          id="username"
+          autocomplete="off"
+        />
+        <app-form-field-error [fGroup]="newUserForm" cName="username" />
+      </div>
+
+      <div>
+        <label class="simple-form-label">Date of Birth</label>
+        <input
+          class="simple-form-field w-full"
+          formControlName="dob"
+          type="date"
+          name="dob"
+          id="dob"
+          autocomplete="off"
+        />
+      </div>
+
+      <div>
+        <label class="simple-form-label required">Gender</label>
+        <select class="simple-form-field" formControlName="gender">
+          <option [value]="'male'">Male</option>
+          <option [value]="'female'">Female</option>
+        </select>
+        <app-form-field-error [fGroup]="newUserForm" cName="gender" />
+      </div>
+
+      <div>
+        <label class="simple-form-label required">E-mail</label>
+        <input
+          class="simple-form-field w-full"
+          formControlName="email"
+          type="email"
+          name="email"
+          id="email"
+          autocomplete="off"
+        />
+        <app-form-field-error [fGroup]="newUserForm" cName="email" />
+      </div>
+
+      <div>
+        <label class="simple-form-label">Phone</label>
+        <input
+          class="simple-form-field w-full"
+          formControlName="phone"
+          type="text"
+          name="phone"
+          id="phone"
+          autocomplete="off"
+        />
+        <app-form-field-error [fGroup]="newUserForm" cName="phone" />
+      </div>
+
+      <div>
+        <label class="simple-form-label">Bio</label>
+        <input
+          class="simple-form-field w-full"
+          formControlName="bio"
+          type="text"
+          name="bio"
+          id="bio"
+          autocomplete="off"
+        />
+        <app-form-field-error [fGroup]="newUserForm" cName="bio" />
+      </div>
+    </div>
+    <div class="mt-4 flex justify-end">
+      <button
+        class="form-submit-button"
+        type="submit"
+        (click)="submitForm()"
+        [disabled]="isLoading() || newUserForm.invalid"
+      >
+        @if (isLoading()) {
+          Loading
+        } @else {
+          Save
+        }
+      </button>
+    </div>
+  </form>
+</div>

@@ -6,7 +6,8 @@ import { Router, RouterLink } from '@angular/router';
   selector: 'app-nav',
   imports: [FormsModule, RouterLink],
   template: `
-    <nav class="flex h-16 w-full items-center justify-center gap-2 bg-blue-50">
+    <nav
+      class="flex h-16 w-full items-center justify-center gap-6 bg-slate-700">
       <a
         class="rounded-md bg-slate-200 px-2 py-1 text-base font-medium text-blue-900 hover:underline"
         [routerLink]="['/']"
