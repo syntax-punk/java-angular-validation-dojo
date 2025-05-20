@@ -6,5 +6,9 @@ import { inject, Injectable } from '@angular/core';
 })
 export class UsersService {
   private http = inject(HttpClient);
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl = 'https://localhost:5003/api/';
+
+  test() {
+    return this.http.get(this.baseUrl + 'users');
+  }
 }
