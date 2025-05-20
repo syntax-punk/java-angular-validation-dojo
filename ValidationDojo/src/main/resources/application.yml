@@ -19,7 +19,7 @@ spring:
       path: /api-docs
 
 server:
-  port: 20006
+  port: 5001
   forward-headers-strategy: native
   tomcat:
     remote-ip-header: x-forwarded-for
