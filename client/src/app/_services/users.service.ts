@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { CreateUserDto, IdResposeDto, UserResponseDto } from '../_models/User';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class UsersService {
   private http = inject(HttpClient);

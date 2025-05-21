@@ -8,6 +8,7 @@
     "username": "ggnordmann",
     "email": "gg.nordmann@example.com",
     "phone": "12345678",
+    "photoUrl": "https://randomuser.me/api/portraits/men/1.jpg",
     "bio": "Loves skiing and hiking in the mountains.",
     "followers": ["2f8a4b6c-7d9e-4a1a-b3c4-5e6f7e8a9b0c"],
     "following": ["2f8a4b6c-7d9e-4a1a-b3c4-5e6f7e8a9b0c"]
@@ -21,6 +22,7 @@
     "username": "karianordmann",
     "email": "karia.nordmann@example.com",
     "phone": "87654321",
+    "photoUrl": "https://randomuser.me/api/portraits/women/1.jpg",
     "bio": "Enjoys painting and photography.",
     "followers": ["1e7b3c8e-8f3a-4b6a-9c2d-1a2b3c4d5e6f"],
     "following": [
@@ -37,6 +39,7 @@
     "username": "mattivirtanen",
     "email": "matti.virtanen@example.com",
     "phone": "11223344",
+    "photoUrl": "https://randomuser.me/api/portraits/men/2.jpg",
     "bio": "Avid reader and history enthusiast.",
     "followers": ["2f8a4b6c-7d9e-4a1a-b3c4-5e6f7e8a9b0c"],
     "following": []
@@ -50,6 +53,7 @@
     "username": "sigridurjonsdottir",
     "email": "sigridur.jonsdottir@example.com",
     "phone": "55667788",
+    "photoUrl": "https://randomuser.me/api/portraits/women/2.jpg",
     "bio": "Passionate about cooking and baking.",
     "followers": [],
     "following": ["5e6f7a8b-3c4d-4d5e-9f6a-1b2c3d4e5f6a"]
@@ -63,6 +67,7 @@
     "username": "erikjohansen",
     "email": "erik.johansen@example.com",
     "phone": "66778899",
+    "photoUrl": "https://randomuser.me/api/portraits/men/3.jpg",
     "bio": "Tech enthusiast and gamer.",
     "followers": ["4b6c7d9e-1a2b-4c4d-9a3e-7f8b9c0d1e2f"],
     "following": []
@@ -76,6 +81,7 @@
     "username": "ingridberg",
     "email": "ingrid.berg@example.com",
     "phone": "77889900",
+    "photoUrl": "https://randomuser.me/api/portraits/women/3.jpg",
     "bio": "Loves traveling and exploring new cultures.",
     "followers": [],
     "following": ["7e8a9b0c-1d2e-4f5a-9b3c-0d1e2f3a4b5c"]
@@ -89,6 +95,7 @@
     "username": "larsolsen",
     "email": "lars.olsen@example.com",
     "phone": "88990011",
+    "photoUrl": "https://randomuser.me/api/portraits/men/4.jpg",
     "bio": "Enjoys fishing and outdoor activities.",
     "followers": ["6f7e8a9b-0d1c-4b5e-9f7a-3c2d1e4f5b6a"],
     "following": []
@@ -102,6 +109,7 @@
     "username": "helgaeiriksdottir",
     "email": "helga.eiriksdottir@example.com",
     "phone": "99001122",
+    "photoUrl": "https://randomuser.me/api/portraits/women/5.jpg",
     "bio": "Fitness enthusiast and yoga instructor.",
     "followers": [],
     "following": []

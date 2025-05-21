@@ -9,10 +9,11 @@ import { RouterLink } from '@angular/router';
       <h1 class="text-4xl font-bold text-gray-800">404 - Page Not Found</h1>
       <button
         class="mt-4 rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
-        routerLink="/">
+        routerLink="/"
+      >
         Return home
       </button>
     </div>
-  `,
+  `
 })
 export class NotFoundComponent {}

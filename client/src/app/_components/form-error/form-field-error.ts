@@ -18,10 +18,10 @@ import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
         </ul>
       }
     }
-  `,
+  `
 })
 export class FormFieldErrorComponent<
-  T extends { [K in keyof T]: AbstractControl<any, any> },
+  T extends { [K in keyof T]: AbstractControl<unknown, unknown> }
 > {
   fGroup = input.required<FormGroup<T>>();
   cName = input.required<keyof T>();

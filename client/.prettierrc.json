@@ -8,7 +8,6 @@
   "semi": true,
   "bracketSpacing": true,
   "arrowParens": "avoid",
-  "trailingComma": "es5",
-  "bracketSameLine": true,
+  "trailingComma": "none",
   "printWidth": 80
 }

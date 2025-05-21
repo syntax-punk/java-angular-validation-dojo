@@ -11,14 +11,16 @@ import { UserResponseDto } from '../_models/User';
       <h2 class="p-2 font-mono text-2xl uppercase">Users</h2>
       <app-list [usersList]="users" />
     </div>
-  `,
+  `
 })
 export class HomeComponent implements OnInit {
   private usersService = inject(UsersService);
   users: UserResponseDto[] = [];
 
   ngOnInit(): void {
-    this.loadUsers();
+    setTimeout(() => {
+      this.loadUsers();
+    }, 500);
   }
 
   loadUsers() {
@@ -28,7 +30,7 @@ export class HomeComponent implements OnInit {
       },
       error: error => {
         console.error('Error fetching users:', error);
-      },
+      }
     });
   }
 }

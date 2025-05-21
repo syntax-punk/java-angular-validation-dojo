@@ -4,7 +4,10 @@ import com.syntaxpunk.validationdojo.users.dtos.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class UserService {
@@ -35,6 +38,16 @@ public class UserService {
 
         if (existing.isPresent()) {
             throw new UnsupportedOperationException("User with this email already exists");
+        }
+
+        //  add photoUrl if not provided
+        if (!StringUtils.hasText(user.getPhotoUrl())) {
+            var nextPhotoId = userRepository.count() + 12;
+            if (Objects.equals(user.getGender(), "male")) {
+                user.setPhotoUrl("https://randomuser.me/api/portraits/men/" + nextPhotoId + ".jpg");
+            } else {
+                user.setPhotoUrl("https://randomuser.me/api/portraits/women/" + nextPhotoId + ".jpg");
+            }
         }
 
         userRepository.save(user);

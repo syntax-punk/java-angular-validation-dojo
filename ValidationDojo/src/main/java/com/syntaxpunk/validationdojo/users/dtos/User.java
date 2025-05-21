@@ -29,6 +29,7 @@ public class User {
     private String email;
     private String phone;
     private String bio;
+    private String photoUrl;
 
     @ElementCollection
     private List<String> followers;

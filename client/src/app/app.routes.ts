@@ -12,11 +12,11 @@ export const routes: Routes = [
     children: [
       {
         path: 'users/new',
-        component: NewUserComponent,
+        component: NewUserComponent
       },
-      { path: 'users/:id', component: DetailsComponent },
-    ],
+      { path: 'users/:id', component: DetailsComponent }
+    ]
   },
   { path: '404', component: NotFoundComponent },
-  { path: '**', component: HomeComponent, pathMatch: 'full' },
+  { path: '**', component: HomeComponent, pathMatch: 'full' }
 ];

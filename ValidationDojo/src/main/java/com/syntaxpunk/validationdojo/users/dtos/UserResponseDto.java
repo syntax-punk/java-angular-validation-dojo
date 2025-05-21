@@ -11,14 +11,16 @@ public class UserResponseDto {
     private String username;
     private LocalDate dob;
     private String gender;
+    private String photoUrl;
     private String bio;
 
     public static UserResponseDto from(User user) {
         return new UserResponseDto()
-                .setId(user.getId())
-                .setUsername(user.getUsername())
-                .setDob(user.getDob())
-                .setGender(user.getGender())
-                .setBio(user.getBio());
+            .setId(user.getId())
+            .setUsername(user.getUsername())
+            .setDob(user.getDob())
+            .setGender(user.getGender())
+            .setPhotoUrl(user.getPhotoUrl())
+            .setBio(user.getBio());
     }
 }

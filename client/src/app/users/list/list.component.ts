@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-list',
   imports: [RouterLink],
-  templateUrl: './list.component.html',
+  templateUrl: './list.component.html'
 })
 export class ListComponent {
   usersList = input.required<UserResponseDto[]>();

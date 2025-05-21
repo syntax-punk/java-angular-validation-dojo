@@ -3,7 +3,12 @@
     <ul class="w-full h-full md:w-[80%] flex flex-wrap flex-row gap-x-2 gap-y-12 p-4">
       @for(user of usersList(); track user.id) {
         <li class="flex flex-col items-center justify-center gap-2" routerLink="/users/{{ user.id }}">
-          <div class="w-48 h-48 rounded-full bg-teal-200 hover:bg-teal-600 transition-all duration-200 ease-in-out cursor-pointer">
+          <div class="flex items-center justify-center w-48 h-48 rounded-full bg-purple-800 transition-all duration-200 ease-in-out cursor-pointer">
+            <img
+              class="w-46 h-46 rounded-full object-cover transition-all duration-500 ease-in-out hover:scale-105"
+              src="{{ user.photoUrl }}"
+              alt="User photo"
+            />
           </div>
           <p class="text-base font-semibold text-neutral-100">{{ user.username }}</p>
         </li>
