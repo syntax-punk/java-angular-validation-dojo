@@ -7,8 +7,8 @@ import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
   template: `
     @if (isInvalidAndTouched) {
       @if (errors !== null && errors[errorType()]) {
-        <ul class="ml-2 p-2 text-sm font-semibold text-red-500">
-          <li class="list-disc">
+        <ul class="py-2 text-sm font-semibold text-red-500">
+          <li>
             @if (customText()) {
               <span class="custom-field-error">{{ customText() }}</span>
             } @else {
