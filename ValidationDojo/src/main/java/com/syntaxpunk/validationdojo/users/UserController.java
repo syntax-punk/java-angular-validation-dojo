@@ -47,6 +47,19 @@ public class UserController {
 
     @PostMapping()
     public ResponseEntity<IdResposeDto> createUser(@RequestBody CreateUserDto createUserDto) {
+
+        if (createUserDto.getFirstName().isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        if (createUserDto.getLastName().isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        if (createUserDto.getUsername().isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+
         var user = User.from(createUserDto);
         _userService.save(user);
 

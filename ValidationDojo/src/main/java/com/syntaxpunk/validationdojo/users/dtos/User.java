@@ -1,9 +1,6 @@
 package com.syntaxpunk.validationdojo.users.dtos;
 
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,7 +22,9 @@ public class User {
     private String lastName;
     private LocalDate dob;
     private String gender;
+    @Column(unique = true)
     private String username;
+    @Column(unique = true)
     private String email;
     private String phone;
     private String bio;
