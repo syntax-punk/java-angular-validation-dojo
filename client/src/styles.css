@@ -27,3 +27,13 @@ body {
 label.required {
   @apply after:content-['*'] after:ml-2 after:text-red-500;
 }
+
+.invalid-feedback {
+  display: none;
+  @apply py-2 text-sm font-semibold text-red-500;
+}
+
+.was-validated .form-control:invalid ~ .invalid-feedback,
+.form-control.is-invalid ~ .invalid-feedback {
+  display: block;
+}
