@@ -13,15 +13,17 @@ public class CreateUserDto {
     private String firstName;
 
     @NotBlank
+    @Pattern(regexp ="^\\p{L}+([\\s\\-']?\\p{L}+)*$")
     private String lastName;
 
-    @NotBlank
     private LocalDate dob;
 
     @NotBlank
     private String gender;
 
-    @NotBlank
+    @NotBlank(message = "Username is required")
+    @Size(min = 3, max = 30, message = "Username must be between 3 and 30 characters")
+    @Pattern(regexp = "^[a-zA-Z0-9._-]+$", message = "Username can only contain letters, numbers, and .-_")
     private String username;
 
     @Email
@@ -29,6 +31,6 @@ public class CreateUserDto {
 
     private String phone;
 
-    @Size(max = 20)
+    @Size(max = 256)
     private String bio;
 }
