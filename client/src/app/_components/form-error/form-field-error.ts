@@ -26,7 +26,7 @@ export class FormFieldErrorComponent<
   fGroup = input.required<FormGroup<T>>();
   cName = input.required<keyof T>();
   errorType = input<CustomFormErrorType>('required');
-  errorText = input<string>('må fylles inn');
+  errorText = input<string>('is required');
   customText = input<string>('');
 
   private getControl(controlName: string | any) {
