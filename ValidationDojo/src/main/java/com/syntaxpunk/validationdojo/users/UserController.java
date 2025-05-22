@@ -46,8 +46,10 @@ public class UserController {
         return ResponseEntity.ok(UserResponseDto.from(user));
     }
 
+    // OOPS 2
+    // @Valid
     @PostMapping()
-    public ResponseEntity<IdResposeDto> createUser(@Valid @RequestBody CreateUserDto createUserDto) {
+    public ResponseEntity<IdResposeDto> createUser(@RequestBody CreateUserDto createUserDto) {
 
         if (createUserDto.getFirstName().isEmpty()) {
             return ResponseEntity.badRequest().build();
