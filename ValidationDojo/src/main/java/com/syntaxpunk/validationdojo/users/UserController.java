@@ -4,6 +4,7 @@ import com.syntaxpunk.validationdojo.users.dtos.CreateUserDto;
 import com.syntaxpunk.validationdojo.users.dtos.IdResposeDto;
 import com.syntaxpunk.validationdojo.users.dtos.User;
 import com.syntaxpunk.validationdojo.users.dtos.UserResponseDto;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -46,7 +47,7 @@ public class UserController {
     }
 
     @PostMapping()
-    public ResponseEntity<IdResposeDto> createUser(@RequestBody CreateUserDto createUserDto) {
+    public ResponseEntity<IdResposeDto> createUser(@Valid @RequestBody CreateUserDto createUserDto) {
 
         if (createUserDto.getFirstName().isEmpty()) {
             return ResponseEntity.badRequest().build();
@@ -59,7 +60,6 @@ public class UserController {
         if (createUserDto.getUsername().isEmpty()) {
             return ResponseEntity.badRequest().build();
         }
-
         var user = User.from(createUserDto);
         _userService.save(user);
 

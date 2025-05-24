@@ -1,3 +1,4 @@
+import { CustomFormErrorType } from '@/_helpers/validation';
 import { Component, input } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 
@@ -44,13 +45,3 @@ export class FormFieldErrorComponent<
     return this.getControl(this.cName()).errors;
   }
 }
-
-export type CustomFormErrorType =
-  | 'required'
-  | 'minlength'
-  | 'maxlength'
-  | 'max'
-  | 'whitespace'
-  | 'email'
-  | 'pattern'
-  | 'ugyldig';

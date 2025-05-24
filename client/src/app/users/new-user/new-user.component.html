@@ -8,57 +8,29 @@
     }
 
     <div class="mt-4 grid grid-cols-1 gap-6">
-      <div>
-        <label class="simple-form-label required">First Name</label>
-        <input
-          class="simple-form-field w-full"
-          formControlName="firstName"
-          type="text"
-          name="firstName"
-          id="firstName"
-          autocomplete="off"
-          setfocus
-        />
-        <app-form-field-error [fGroup]="newUserForm" cName="firstName" />
-      </div>
+      <app-text-input
+        [id]="'firstName'"
+        [formControl]="newUserForm.controls['firstName']"
+        [label]="'First Name'"
+        required />
 
-      <div>
-        <label class="simple-form-label required">Last Name</label>
-        <input
-          class="simple-form-field w-full"
-          formControlName="lastName"
-          type="text"
-          name="lastName"
-          id="lastName"
-          autocomplete="off"
-        />
-        <app-form-field-error [fGroup]="newUserForm" cName="lastName" />
-      </div>
+      <app-text-input
+        [id]="'lastName'"
+        [formControl]="newUserForm.controls['lastName']"
+        [label]="'Last Name'"
+        required />
 
-      <div>
-        <label class="simple-form-label required">Username</label>
-        <input
-          class="simple-form-field w-full"
-          formControlName="username"
-          type="text"
-          name="username"
-          id="username"
-          autocomplete="off"
-        />
-        <app-form-field-error [fGroup]="newUserForm" cName="username" />
-      </div>
+      <app-text-input
+        [id]="'username'"
+        [formControl]="newUserForm.controls['username']"
+        [label]="'Username'"
+        required />
 
-      <div>
-        <label class="simple-form-label">Date of Birth</label>
-        <input
-          class="simple-form-field w-full"
-          formControlName="dob"
-          type="date"
-          name="dob"
-          id="dob"
-          autocomplete="off"
-        />
-      </div>
+      <app-text-input
+        [id]="'dob'"
+        [formControl]="newUserForm.controls['dob']"
+        [label]="'Date of Birth'"
+        [type]="'date'" />
 
       <div>
         <label class="simple-form-label required">Gender</label>
@@ -69,44 +41,22 @@
         <app-form-field-error [fGroup]="newUserForm" cName="gender" />
       </div>
 
-      <div>
-        <label class="simple-form-label required">E-mail</label>
-        <input
-          class="simple-form-field w-full"
-          formControlName="email"
-          type="email"
-          name="email"
-          id="email"
-          autocomplete="off"
-        />
-        <app-form-field-error [fGroup]="newUserForm" cName="email" />
-      </div>
+      <app-text-input
+        [id]="'email'"
+        [formControl]="newUserForm.controls['email']"
+        [label]="'Email'"
+        [type]="'email'"
+        required />
 
-      <div>
-        <label class="simple-form-label">Phone</label>
-        <input
-          class="simple-form-field w-full"
-          formControlName="phone"
-          type="text"
-          name="phone"
-          id="phone"
-          autocomplete="off"
-        />
-        <app-form-field-error [fGroup]="newUserForm" cName="phone" />
-      </div>
+      <app-text-input
+        [id]="'phone'"
+        [formControl]="newUserForm.controls['phone']"
+        [label]="'Phone'" />
 
-      <div>
-        <label class="simple-form-label">Bio</label>
-        <input
-          class="simple-form-field w-full"
-          formControlName="bio"
-          type="text"
-          name="bio"
-          id="bio"
-          autocomplete="off"
-        />
-        <app-form-field-error [fGroup]="newUserForm" cName="bio" />
-      </div>
+      <app-text-input
+        [id]="'bio'"
+        [formControl]="newUserForm.controls['bio']"
+        [label]="'Bio'" />
     </div>
     <div class="mt-4 flex justify-end">
       <button
