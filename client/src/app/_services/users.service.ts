@@ -13,6 +13,10 @@ export class UsersService {
     return this.http.get<UserResponseDto[]>(`${this.baseUrl}users`);
   }
 
+  getUserById(id: string) {
+    return this.http.get<UserResponseDto>(`${this.baseUrl}users/${id}`);
+  }
+
   createUser(payload: CreateUserDto) {
     return this.http.post<IdResposeDto>(`${this.baseUrl}users`, payload);
   }
