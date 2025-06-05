@@ -9,11 +9,11 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class CreateUserDto {
     @NotBlank
-    @Pattern(regexp ="^\\p{L}+([\\s\\-']?\\p{L}+)*$")
+    @Pattern(regexp ="^\\p{L}+([\\s\\-']?\\p{L}+)*$", message = "First name format is invalid")
     private String firstName;
 
     @NotBlank
-    @Pattern(regexp ="^\\p{L}+([\\s\\-']?\\p{L}+)*$")
+    @Pattern(regexp ="^\\p{L}+([\\s\\-']?\\p{L}+)*$", message = "Last name format is invalid")
     private String lastName;
 
     private LocalDate dob;

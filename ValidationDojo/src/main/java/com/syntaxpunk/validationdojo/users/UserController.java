@@ -49,18 +49,6 @@ public class UserController {
 
     @PostMapping()
     public ResponseEntity<IdResposeDto> createUser(@Valid @RequestBody CreateUserDto createUserDto) {
-
-        if (!StringUtils.hasText(createUserDto.getFirstName())) {
-            throw new IllegalArgumentException("First name must not be empty");
-        }
-
-        if (!StringUtils.hasText(createUserDto.getLastName())) {
-            throw new IllegalArgumentException("Last name must not be empty");
-        }
-
-        if (StringUtils.hasText(createUserDto.getUsername())) {
-            throw new IllegalArgumentException("Username must not be empty");
-        }
         var user = User.from(createUserDto);
         _userService.save(user);
 
