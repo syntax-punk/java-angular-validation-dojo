@@ -1,5 +1,6 @@
 package com.syntaxpunk.validationdojo.users.dtos;
 
+import com.syntaxpunk.validationdojo.users.model.User;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import java.time.LocalDate;
