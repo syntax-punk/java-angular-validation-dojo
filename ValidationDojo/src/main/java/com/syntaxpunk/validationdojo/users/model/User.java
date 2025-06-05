@@ -1,5 +1,6 @@
-package com.syntaxpunk.validationdojo.users.dtos;
+package com.syntaxpunk.validationdojo.users.model;
 
+import com.syntaxpunk.validationdojo.users.dtos.CreateUserDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -5,8 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.syntaxpunk.validationdojo.users.UserService;
-import com.syntaxpunk.validationdojo.users.dtos.User;
+import com.syntaxpunk.validationdojo.users.model.User;
 import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import java.io.FileNotFoundException;
@@ -15,6 +16,7 @@ import java.io.InputStream;
 import java.util.List;
 
 @Service
+@Slf4j
 public class SeedingService {
     private final UserService _userService;
 
@@ -42,7 +44,7 @@ public class SeedingService {
                 _userService.saveList(users);
                 LoggerFactory.getLogger(SeedingService.class).info("-> users seeded - ok");
             } catch (IOException e) {
-                e.printStackTrace();
+               log.error("-> Error reading UsersSeedData.json: {}", e.getMessage());
             }
         }
     }

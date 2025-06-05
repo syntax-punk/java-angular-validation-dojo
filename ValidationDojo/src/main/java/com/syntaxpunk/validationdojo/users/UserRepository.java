@@ -1,6 +1,6 @@
 package com.syntaxpunk.validationdojo.users;
 
-import com.syntaxpunk.validationdojo.users.dtos.User;
+import com.syntaxpunk.validationdojo.users.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

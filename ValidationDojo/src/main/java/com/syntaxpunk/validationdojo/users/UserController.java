@@ -2,11 +2,12 @@ package com.syntaxpunk.validationdojo.users;
 
 import com.syntaxpunk.validationdojo.users.dtos.CreateUserDto;
 import com.syntaxpunk.validationdojo.users.dtos.IdResposeDto;
-import com.syntaxpunk.validationdojo.users.dtos.User;
+import com.syntaxpunk.validationdojo.users.model.User;
 import com.syntaxpunk.validationdojo.users.dtos.UserResponseDto;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import java.util.Collections;
 import java.util.List;
@@ -49,16 +50,16 @@ public class UserController {
     @PostMapping()
     public ResponseEntity<IdResposeDto> createUser(@Valid @RequestBody CreateUserDto createUserDto) {
 
-        if (createUserDto.getFirstName().isEmpty()) {
-            return ResponseEntity.badRequest().build();
+        if (!StringUtils.hasText(createUserDto.getFirstName())) {
+            throw new IllegalArgumentException("First name must not be empty");
         }
 
-        if (createUserDto.getLastName().isEmpty()) {
-            return ResponseEntity.badRequest().build();
+        if (!StringUtils.hasText(createUserDto.getLastName())) {
+            throw new IllegalArgumentException("Last name must not be empty");
         }
 
-        if (createUserDto.getUsername().isEmpty()) {
-            return ResponseEntity.badRequest().build();
+        if (StringUtils.hasText(createUserDto.getUsername())) {
+            throw new IllegalArgumentException("Username must not be empty");
         }
         var user = User.from(createUserDto);
         _userService.save(user);

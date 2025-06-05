@@ -1,6 +1,6 @@
 package com.syntaxpunk.validationdojo.users;
 
-import com.syntaxpunk.validationdojo.users.dtos.User;
+import com.syntaxpunk.validationdojo.users.model.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -11,6 +11,7 @@ import java.util.Objects;
 
 @Service
 public class UserService {
+    private final static String PHOTO_API_BASE_URL = "https://randomuser.me/api/portraits";
     private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {
@@ -44,9 +45,9 @@ public class UserService {
         if (!StringUtils.hasText(user.getPhotoUrl())) {
             var nextPhotoId = userRepository.count() + 12;
             if (Objects.equals(user.getGender(), "male")) {
-                user.setPhotoUrl("https://randomuser.me/api/portraits/men/" + nextPhotoId + ".jpg");
+                user.setPhotoUrl(String.format("%s/men/%d.jpg", PHOTO_API_BASE_URL, nextPhotoId));
             } else {
-                user.setPhotoUrl("https://randomuser.me/api/portraits/women/" + nextPhotoId + ".jpg");
+                user.setPhotoUrl(String.format("%s/women/%d.jpg", PHOTO_API_BASE_URL, nextPhotoId));
             }
         }
 
