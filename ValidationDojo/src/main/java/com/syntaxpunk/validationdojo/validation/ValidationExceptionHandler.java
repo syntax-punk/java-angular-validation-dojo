@@ -25,14 +25,4 @@ public class ValidationExceptionHandler {
 		ErrorResponse response = new ErrorResponse("Provided data is not valid", errors);
 		return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 	}
-
-	@ExceptionHandler(IllegalArgumentException.class)
-	public ResponseEntity<ErrorResponse> handleIllegalArgumentException(
-		IllegalArgumentException ex) {
-		Map<String, String> errors = new HashMap<>();
-		errors.put("problem", ex.getMessage());
-		ErrorResponse response = new ErrorResponse("Invalid argument provided", errors);
-		return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-	}
-
 }
