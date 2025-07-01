@@ -5,21 +5,18 @@ import com.syntaxpunk.validationdojo.users.dtos.IdResposeDto;
 import com.syntaxpunk.validationdojo.users.model.User;
 import com.syntaxpunk.validationdojo.users.dtos.UserResponseDto;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import java.util.Collections;
 import java.util.List;
 
 @RestController()
 @RequestMapping("/api/users")
+@AllArgsConstructor
 public class UserController {
     private final UserService _userService;
-
-    public UserController(UserService userService) {
-        _userService = userService;
-    }
 
     @GetMapping()
     public ResponseEntity<List<UserResponseDto>> getUsers() {
