@@ -31,6 +31,14 @@
       />
 
       <app-text-input
+        [id]="'password'"
+        [formControl]="newUserForm.controls['password']"
+        [label]="'Password'"
+        [type]="'password'"
+        required
+      />
+
+      <app-text-input
         [id]="'dob'"
         [formControl]="newUserForm.controls['dob']"
         [label]="'Date of Birth'"

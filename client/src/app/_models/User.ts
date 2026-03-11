@@ -11,8 +11,9 @@ export interface CreateUserDto {
   firstName: string;
   lastName: string;
   dob: string;
-  genger: 'male' | 'gemale';
+  gender: 'male' | 'female';
   username: string;
+  password: string;
   email: string;
   phone: string;
   bio: string;

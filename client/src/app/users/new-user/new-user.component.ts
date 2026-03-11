@@ -36,6 +36,7 @@ export class NewUserComponent implements OnInit {
     firstName: this.fb.control('', Validators.required),
     lastName: this.fb.control('', Validators.required),
     username: this.fb.control('', Validators.required),
+    password: this.fb.control('', [Validators.required, Validators.minLength(8)]),
     dob: this.fb.control('', Validators.required),
     gender: this.fb.control('', Validators.required),
     email: this.fb.control('', [Validators.required, Validators.email]),

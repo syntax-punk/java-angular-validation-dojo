@@ -20,6 +20,10 @@ spring:
         jwt:
           issuer-uri: http://localhost:9000/application/o/lonelysouls/
 
+authentik:
+  base-url: http://localhost:9000
+  api-token: BZJCAxA7F6MhXU4r7CS0S0r1zA2w8SoSoiICi8s1253ALLXyeycAhwk4ntq5
+
 app:
   oidc:
     client-id: MiTVT9LO4R5bb3d80BuvpauOl9YuRyFvOigTUC7O

@@ -1,5 +1,6 @@
 package com.syntaxpunk.validationdojo.users;
 
+import com.syntaxpunk.validationdojo.authentik.AuthentikService;
 import com.syntaxpunk.validationdojo.users.dtos.CreateUserDto;
 import com.syntaxpunk.validationdojo.users.dtos.IdResposeDto;
 import com.syntaxpunk.validationdojo.users.model.User;
@@ -17,6 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 public class UserController {
     private final UserService _userService;
+    private final AuthentikService _authentikService;
 
     @GetMapping()
     public ResponseEntity<List<UserResponseDto>> getUsers() {
@@ -48,6 +50,14 @@ public class UserController {
     public ResponseEntity<IdResposeDto> createUser(@Valid @RequestBody CreateUserDto createUserDto) {
         var user = User.from(createUserDto);
         _userService.save(user);
+
+        _authentikService.createUser(
+            createUserDto.getUsername(),
+            createUserDto.getFirstName(),
+            createUserDto.getLastName(),
+            createUserDto.getEmail(),
+            createUserDto.getPassword()
+        );
 
         var response = new IdResposeDto(user.getId());
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
