@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { booleanAttribute, Component, input, output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'tonal';
@@ -16,7 +16,9 @@ const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   imports: [RouterLink, RouterLinkActive],
   template: `
     <button
-      [class]="baseClasses + ' ' + variantClasses()"
+      [class]="baseClasses + ' ' + variantClasses() + (disabled() ? ' opacity-50 cursor-not-allowed' : '')"
+      [type]="type()"
+      [disabled]="disabled()"
       [routerLink]="link() ?? null"
       [routerLinkActive]="link() ? 'opacity-80 ring-2 ring-white/40' : ''"
       (click)="clicked.emit()"
@@ -30,6 +32,8 @@ export class ButtonComponent {
   label = input<string>('');
   variant = input<ButtonVariant>('primary');
   link = input<string[] | null>(null);
+  type = input<'button' | 'submit' | 'reset'>('button');
+  disabled = input(false, { transform: booleanAttribute });
   clicked = output<void>();
 
   baseClasses =
