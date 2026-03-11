@@ -13,6 +13,10 @@ export class UsersService {
     return this.http.get<UserResponseDto[]>(`${this.baseUrl}users`);
   }
 
+  getMyPhoto() {
+    return this.http.get<{ photoUrl: string }>(`${this.baseUrl}users/me/photo`);
+  }
+
   getUserById(id: string) {
     return this.http.get<UserResponseDto>(`${this.baseUrl}users/${id}`);
   }

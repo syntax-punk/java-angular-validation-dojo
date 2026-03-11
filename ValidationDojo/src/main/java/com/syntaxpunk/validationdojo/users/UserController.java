@@ -3,12 +3,15 @@ package com.syntaxpunk.validationdojo.users;
 import com.syntaxpunk.validationdojo.authentik.AuthentikService;
 import com.syntaxpunk.validationdojo.users.dtos.CreateUserDto;
 import com.syntaxpunk.validationdojo.users.dtos.IdResposeDto;
+import com.syntaxpunk.validationdojo.users.dtos.PhotoUrlDto;
 import com.syntaxpunk.validationdojo.users.model.User;
 import com.syntaxpunk.validationdojo.users.dtos.UserResponseDto;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 import java.util.Collections;
 import java.util.List;
@@ -33,6 +36,18 @@ public class UserController {
                 .toList();
 
         return ResponseEntity.ok(results);
+    }
+
+    @GetMapping("/me/photo")
+    public ResponseEntity<PhotoUrlDto> getMyPhoto(@AuthenticationPrincipal Jwt jwt) {
+        var email = jwt.getClaimAsString("email");
+        var user = _userService.getByEmail(email);
+
+        if (user == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(new PhotoUrlDto(user.getPhotoUrl()));
     }
 
     @GetMapping("/{id}")

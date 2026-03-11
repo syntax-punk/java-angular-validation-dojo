@@ -18,13 +18,39 @@ import { Router } from '@angular/router';
       </span>
 
       @if (accountService.isAuthenticated()) {
-        <div class="flex items-center gap-4">
+        <div
+          id="greetings-title"
+          class="flex flex-1 items-center justify-center gap-4"
+        >
           <span class="text-sm font-semibold text-purple-200">
-            &#64;{{ accountService.userData()?.preferred_username }}
+            {{ greeting }}, &#64;{{
+              accountService.userData()?.preferred_username
+            }}
           </span>
-          <app-button variant="secondary" (clicked)="logout()">
-            Logout
-          </app-button>
+          @if (accountService.photoUrl()) {
+            <img
+              [src]="accountService.photoUrl()!"
+              alt="Profile photo"
+              class="h-8 w-8 rounded-full object-cover ring-2 ring-purple-400"
+            />
+          } @else {
+            <div
+              class="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500 text-sm font-bold text-white ring-2 ring-purple-400"
+            >
+              {{
+                accountService
+                  .userData()
+                  ?.preferred_username?.charAt(0)
+                  ?.toUpperCase()
+              }}
+            </div>
+          }
+        </div>
+      }
+
+      @if (accountService.isAuthenticated()) {
+        <div class="flex items-center gap-4">
+          <app-button variant="primary" (clicked)="logout()">Logout</app-button>
         </div>
       } @else {
         <app-button variant="tonal" [link]="['/login']">Sign in</app-button>
@@ -35,6 +61,17 @@ import { Router } from '@angular/router';
 export class NavComponent {
   accountService = inject(AccountService);
   router = inject(Router);
+
+  private greetings = [
+    'Heisann',
+    'Hey',
+    'Welcome back',
+    'Good to see you',
+    'Howdy',
+    'Yo'
+  ];
+  greeting = this.greetings[Math.floor(Math.random() * this.greetings.length)];
+
   logout() {
     this.accountService.logout();
   }
