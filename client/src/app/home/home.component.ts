@@ -8,7 +8,6 @@ import { UserResponseDto } from '../_models/User';
   imports: [ListComponent],
   template: `
     <div class="flex flex-col items-center justify-center gap-2">
-      <h2 class="p-2 font-mono text-2xl uppercase">Users</h2>
       <app-list [usersList]="users" />
     </div>
   `
