@@ -1,8 +1,5 @@
-<div class="mx-auto w-full p-2 pt-6 md:max-w-md">
-  <form
-    [formGroup]="newUserForm"
-    class="relative w-[32rem] rounded-md border border-slate-100 bg-slate-50 px-6 py-2 shadow-md"
-  >
+<app-card>
+  <form [formGroup]="newUserForm" class="relative">
     @if (isLoading()) {
       <div
         class="absolute top-0 left-0 z-10 flex h-full w-full items-center justify-center rounded-md bg-slate-50 opacity-50 shadow-md"
@@ -70,18 +67,13 @@
       />
     </div>
     <div class="mt-4 flex justify-end">
-      <button
-        class="form-submit-button"
+      <app-button
         type="submit"
-        (click)="submitForm()"
+        (clicked)="submitForm()"
         [disabled]="isLoading() || newUserForm.invalid"
       >
-        @if (isLoading()) {
-          Loading
-        } @else {
-          Save
-        }
-      </button>
+        {{ isLoading() ? 'Loading...' : 'Save' }}
+      </app-button>
     </div>
   </form>
-</div>
+</app-card>

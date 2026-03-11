@@ -7,18 +7,27 @@ import { Component, inject } from '@angular/core';
   imports: [ButtonComponent],
   template: `
     <nav
-      class="flex h-16 w-full items-center justify-between gap-6 bg-purple-950 px-4"
+      class="relative flex h-16 w-full items-center justify-between gap-6 bg-purple-950 px-4"
     >
       <app-button variant="tonal" [link]="['/']">Home</app-button>
 
+      <span
+        class="absolute left-1/2 -translate-x-1/2 text-lg font-semibold tracking-wide text-white"
+      >
+        Lonely Souls
+      </span>
+
       @if (accountService.isAuthenticated()) {
         <div class="flex items-center gap-4">
-          <span class="text-sm text-purple-200">{{ accountService.userData()?.preferred_username }}</span>
-          <app-button variant="tonal" [link]="['/users/new']">Register</app-button>
-          <app-button variant="secondary" (clicked)="logout()">Logout</app-button>
+          <span class="text-sm text-purple-200">
+            {{ accountService.userData()?.preferred_username }}
+          </span>
+          <app-button variant="secondary" (clicked)="logout()">
+            Logout
+          </app-button>
         </div>
       } @else {
-        <app-button variant="tonal" [link]="['/login']">Login</app-button>
+        <app-button variant="tonal" [link]="['/login']">Sign in</app-button>
       }
     </nav>
   `

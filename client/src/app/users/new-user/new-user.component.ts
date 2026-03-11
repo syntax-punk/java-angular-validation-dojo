@@ -1,3 +1,5 @@
+import { ButtonComponent } from '@/_components/button/button.component';
+import { CardComponent } from '@/_components/card/card.component';
 import { FormFieldErrorComponent } from '@/_components/form-error/form-field-error';
 import { norskTlfValidator } from '@/_helpers/validation';
 import { CreateUserDto } from '@/_models/User';
@@ -18,7 +20,9 @@ import { TextInputComponent } from '../../_components/text-input/text-input.comp
     FormsModule,
     ReactiveFormsModule,
     FormFieldErrorComponent,
-    TextInputComponent
+    TextInputComponent,
+    ButtonComponent,
+    CardComponent
   ],
   templateUrl: './new-user.component.html',
   styles: ``

@@ -1,5 +1,6 @@
 import { AvatarComponent } from '@/_components/avatar/avatar.component';
 import { ButtonComponent } from '@/_components/button/button.component';
+import { CardComponent } from '@/_components/card/card.component';
 import { UserDetailsSkeletonComponent } from '@/_components/skeleton/user-details-skeleton.component';
 import { UserResponseDto } from '@/_models/User';
 import { UsersService } from '@/_services/users.service';
@@ -9,7 +10,12 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
-  imports: [ButtonComponent, AvatarComponent, UserDetailsSkeletonComponent],
+  imports: [
+    ButtonComponent,
+    AvatarComponent,
+    UserDetailsSkeletonComponent,
+    CardComponent
+  ],
   templateUrl: './details.component.html'
 })
 export class DetailsComponent implements OnInit {

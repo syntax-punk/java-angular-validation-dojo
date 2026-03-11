@@ -1,7 +1,5 @@
 @defer (when user) {
-  <section
-    class="mx-auto mt-8 min-h-[600px] max-w-xl rounded-lg border border-slate-100 bg-purple-100 p-6 shadow-md"
-  >
+  <app-card>
     <div class="mb-6 flex flex-col items-center justify-center gap-4">
       <app-avatar [src]="user?.photoUrl ?? ''" alt="User photo" />
       <div>
@@ -64,7 +62,7 @@
         <app-button variant="secondary">Chat</app-button>
       </div>
     </div>
-  </section>
+  </app-card>
 } @placeholder {
   <app-user-details-skeleton />
 }

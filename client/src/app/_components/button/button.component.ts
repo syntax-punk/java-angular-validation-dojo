@@ -16,7 +16,12 @@ const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   imports: [RouterLink, RouterLinkActive],
   template: `
     <button
-      [class]="baseClasses + ' ' + variantClasses() + (disabled() ? ' opacity-50 cursor-not-allowed' : '')"
+      [class]="
+        baseClasses +
+        ' ' +
+        variantClasses() +
+        (disabled() ? ' cursor-not-allowed opacity-50' : '')
+      "
       [type]="type()"
       [disabled]="disabled()"
       [routerLink]="link() ?? null"
