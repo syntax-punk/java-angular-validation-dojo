@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   imports: [ButtonComponent],
   template: `
     <nav
-      class="relative flex h-16 w-full items-center justify-between gap-6 bg-purple-950 px-4"
+      class="sticky top-0 z-50 flex h-16 w-full items-center justify-between gap-6 bg-purple-950 px-4"
     >
       <span
         class="cursor-pointer text-lg font-semibold tracking-wide text-white"

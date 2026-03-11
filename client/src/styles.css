@@ -9,6 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--color-slate-950);
+  overflow-x: hidden;
 }
 
 .simple-form-label {

@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "format": "prettier --write \"src/**/*.{ts,html,scss,css}\""
+    "format": "prettier --write \"src/**/*.{ts,html,scss,css}\"",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -33,6 +34,7 @@
     "@angular-devkit/build-angular": "^19.1.2",
     "@angular/cli": "^19.1.2",
     "@angular/compiler-cli": "^19.1.0",
+    "@playwright/test": "1.58.2",
     "@types/jasmine": "~5.1.0",
     "angular-eslint": "19.4.0",
     "eslint": "^9.26.0",
@@ -44,6 +46,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "playwright-ng-schematics": "^2.0.3",
     "prettier": "^3.5.3",
     "prettier-eslint": "^16.4.2",
     "prettier-plugin-organize-imports": "^4.3.0",
