@@ -1,38 +1,44 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { Router } from '@angular/router';
+import { OidcSecurityService } from 'angular-auth-oidc-client';
 import { map } from 'rxjs';
-import { LoggedInUser, LoginRequest } from '../_models/Auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
+  private oidc = inject(OidcSecurityService);
   private http = inject(HttpClient);
-  baseUrl = 'https://localhost:5003/api/';
+  private router = inject(Router);
+  private baseUrl = 'https://localhost:5003/api/';
 
-  currentUser = signal<LoggedInUser | null>(null);
+  isAuthenticated = toSignal(
+    this.oidc.isAuthenticated$.pipe(map(r => r.isAuthenticated)),
+    { initialValue: false }
+  );
 
-  constructor() {
-    const stored = localStorage.getItem('user');
-    if (stored) {
-      this.currentUser.set(JSON.parse(stored));
-    }
-  }
+  userData = toSignal(this.oidc.userData$.pipe(map(r => r.userData)), {
+    initialValue: null
+  });
 
-  login(request: LoginRequest) {
-    return this.http
-      .post<LoggedInUser>(`${this.baseUrl}account/login`, request)
-      .pipe(
-        map(user => {
-          localStorage.setItem('user', JSON.stringify(user));
-          this.currentUser.set(user);
-          return user;
-        })
-      );
+  login() {
+    this.oidc.authorize();
   }
 
   logout() {
-    localStorage.removeItem('user');
-    this.currentUser.set(null);
+    const done = () => {
+      this.oidc.logoffLocal();
+      this.router.navigateByUrl('/login');
+    };
+    this.http.post(`${this.baseUrl}auth/logout`, {}).subscribe({
+      next: done,
+      error: done
+    });
+  }
+
+  checkAuth() {
+    return this.oidc.checkAuth();
   }
 }

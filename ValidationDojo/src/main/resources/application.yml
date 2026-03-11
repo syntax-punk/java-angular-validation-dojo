@@ -14,6 +14,17 @@ spring:
     hibernate:
       ddl-auto: update
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9000/application/o/lonelysouls/
+
+app:
+  oidc:
+    client-id: MiTVT9LO4R5bb3d80BuvpauOl9YuRyFvOigTUC7O
+    revoke-uri: http://localhost:9000/application/o/revoke/
+
   doc:
     api-docs:
       path: /api-docs

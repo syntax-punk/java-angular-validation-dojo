@@ -1,7 +1,6 @@
 import { ButtonComponent } from '@/_components/button/button.component';
 import { AccountService } from '@/_services/account.service';
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -12,9 +11,9 @@ import { Router } from '@angular/router';
     >
       <app-button variant="tonal" [link]="['/']">Home</app-button>
 
-      @if (accountService.currentUser()) {
+      @if (accountService.isAuthenticated()) {
         <div class="flex items-center gap-4">
-          <span class="text-sm text-purple-200">{{ accountService.currentUser()?.username }}</span>
+          <span class="text-sm text-purple-200">{{ accountService.userData()?.preferred_username }}</span>
           <app-button variant="tonal" [link]="['/users/new']">Register</app-button>
           <app-button variant="secondary" (clicked)="logout()">Logout</app-button>
         </div>
@@ -26,10 +25,7 @@ import { Router } from '@angular/router';
 })
 export class NavComponent {
   accountService = inject(AccountService);
-  private router = inject(Router);
-
   logout() {
     this.accountService.logout();
-    this.router.navigateByUrl('/login');
   }
 }
