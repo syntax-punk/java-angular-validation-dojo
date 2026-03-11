@@ -1,6 +1,7 @@
 import { ButtonComponent } from '@/_components/button/button.component';
 import { AccountService } from '@/_services/account.service';
 import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -9,18 +10,17 @@ import { Component, inject } from '@angular/core';
     <nav
       class="relative flex h-16 w-full items-center justify-between gap-6 bg-purple-950 px-4"
     >
-      <app-button variant="tonal" [link]="['/']">Home</app-button>
-
       <span
-        class="absolute left-1/2 -translate-x-1/2 text-lg font-semibold tracking-wide text-white"
+        class="cursor-pointer text-lg font-semibold tracking-wide text-white"
+        (click)="router.navigate(['/'])"
       >
         Lonely Souls
       </span>
 
       @if (accountService.isAuthenticated()) {
         <div class="flex items-center gap-4">
-          <span class="text-sm text-purple-200">
-            {{ accountService.userData()?.preferred_username }}
+          <span class="text-sm font-semibold text-purple-200">
+            &#64;{{ accountService.userData()?.preferred_username }}
           </span>
           <app-button variant="secondary" (clicked)="logout()">
             Logout
@@ -34,6 +34,7 @@ import { Component, inject } from '@angular/core';
 })
 export class NavComponent {
   accountService = inject(AccountService);
+  router = inject(Router);
   logout() {
     this.accountService.logout();
   }
