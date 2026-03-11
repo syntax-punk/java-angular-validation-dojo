@@ -1,20 +1,24 @@
 import { Component, input, output } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
-type ButtonVariant = 'primary' | 'secondary' | 'ghost';
+type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'tonal';
 
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   primary: 'bg-purple-800 text-white hover:bg-purple-700',
   secondary:
     'bg-white text-purple-800 border border-purple-800 hover:bg-purple-50',
-  ghost: 'text-purple-800 hover:text-purple-600'
+  ghost: 'text-purple-800 hover:text-purple-600',
+  tonal: 'bg-purple-200 text-purple-900 hover:bg-purple-300'
 };
 
 @Component({
   selector: 'app-button',
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   template: `
     <button
       [class]="baseClasses + ' ' + variantClasses()"
+      [routerLink]="link() ?? null"
+      [routerLinkActive]="link() ? 'opacity-80 ring-2 ring-white/40' : ''"
       (click)="clicked.emit()"
     >
       <ng-content />
@@ -25,6 +29,7 @@ const VARIANT_CLASSES: Record<ButtonVariant, string> = {
 export class ButtonComponent {
   label = input<string>('');
   variant = input<ButtonVariant>('primary');
+  link = input<string[] | null>(null);
   clicked = output<void>();
 
   baseClasses =

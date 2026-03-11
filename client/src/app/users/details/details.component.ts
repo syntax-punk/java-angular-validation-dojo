@@ -1,13 +1,15 @@
+import { AvatarComponent } from '@/_components/avatar/avatar.component';
+import { ButtonComponent } from '@/_components/button/button.component';
+import { UserDetailsSkeletonComponent } from '@/_components/skeleton/user-details-skeleton.component';
 import { UserResponseDto } from '@/_models/User';
 import { UsersService } from '@/_services/users.service';
+import { Location } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-import { ButtonComponent } from '@/_components/button/button.component';
 
 @Component({
   selector: 'app-details',
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, AvatarComponent, UserDetailsSkeletonComponent],
   templateUrl: './details.component.html'
 })
 export class DetailsComponent implements OnInit {

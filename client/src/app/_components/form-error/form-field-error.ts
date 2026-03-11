@@ -13,7 +13,8 @@ import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
             @if (customText()) {
               <span class="custom-field-error">{{ customText() }}</span>
             } @else {
-              <span class="capitalize">{{ cName() }}</span> {{ errorText() }}
+              <span class="capitalize">{{ cName() }}</span>
+              {{ errorText() }}
             }
           </li>
         </ul>

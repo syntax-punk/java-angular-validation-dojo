@@ -1,31 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
-@import "tailwindcss";
+@import 'tailwindcss';
 
 body {
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  background-color: var(--color-slate-950)
+  background-color: var(--color-slate-950);
 }
 
 .simple-form-label {
-  @apply block text-sm text-gray-500 font-semibold mb-1;
+  @apply mb-1 block text-sm font-semibold text-gray-500;
 }
 
 .simple-form-field {
-  @apply w-full border-0 p-2 text-gray-700 placeholder:text-gray-400 rounded ring-2 ring-slate-300
-    focus:ring-2 focus:ring-slate-400 text-sm md:text-base disabled:text-gray-400 bg-white;
+  @apply w-full rounded border-0 bg-white p-2 text-sm text-gray-700 ring-2 ring-slate-300 placeholder:text-gray-400 focus:ring-2 focus:ring-slate-400 disabled:text-gray-400 md:text-base;
 }
 
 .form-submit-button {
-  @apply flex items-center justify-center w-24 h-10 bg-teal-500 text-white rounded-md
-  hover:bg-teal-100 hover:text-teal-500 transition-all duration-200 ease-in-out cursor-pointer
-  disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-teal-500 disabled:hover:text-white
+  @apply flex h-10 w-24 cursor-pointer items-center justify-center rounded-md bg-teal-500 text-white transition-all duration-200 ease-in-out hover:bg-teal-100 hover:text-teal-500 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-teal-500 disabled:hover:text-white;
 }
 
 label.required {
-  @apply after:content-['*'] after:ml-2 after:text-red-500;
+  @apply after:ml-2 after:text-red-500 after:content-['*'];
 }
 
 .invalid-feedback {

@@ -1,21 +1,24 @@
-<div class="w-full h-full flex flex-col items-center justify-center gap-2 py-6">
-  <h1 class="text-white text-xl py-4">Find your partner</h1>
-  @if(usersList().length > 0) {
-    <ul class="w-full h-full md:w-[80%] flex flex-wrap flex-row gap-x-2 gap-y-12 p-4">
-      @for(user of usersList(); track user.id) {
-        <li class="flex flex-col items-center justify-center gap-2" routerLink="/users/{{ user.id }}">
-          <div class="flex items-center justify-center w-44 h-44 rounded-full bg-purple-600 transition-all duration-200 ease-in-out cursor-pointer">
-            <img
-              class="w-40 h-40 rounded-full object-cover transition-all duration-500 ease-in-out hover:scale-105"
-              src="{{ user.photoUrl }}"
-              alt="User photo"
-            />
-          </div>
-          <p class="text-base font-semibold text-neutral-100">&#64;{{ user.username }}</p>
+<div class="flex h-full w-full flex-col items-center justify-center gap-2 py-6">
+  <h1 class="py-4 text-xl text-white">Find your partner</h1>
+  @if (loading()) {
+    <app-user-card-skeleton />
+  } @else if (usersList().length > 0) {
+    <ul
+      class="flex h-full w-full flex-row flex-wrap gap-x-2 gap-y-12 p-4 md:w-[80%]"
+    >
+      @for (user of usersList(); track user.id) {
+        <li
+          class="flex flex-col items-center justify-center gap-2"
+          routerLink="/users/{{ user.id }}"
+        >
+          <app-avatar size="md" [src]="user.photoUrl ?? ''" alt="User photo" />
+          <p class="text-base font-semibold text-neutral-100">
+            &#64;{{ user.username }}
+          </p>
         </li>
       }
     </ul>
   } @else {
-    <h4>No users</h4>
+    <h2 class="text-white">No users</h2>
   }
 </div>

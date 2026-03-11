@@ -1,8 +1,12 @@
-<div class="w-full p-2 pt-6 md:max-w-md mx-auto">
-
-  <form [formGroup]="newUserForm" class="w-[32rem] px-6 py-2 border border-slate-100 rounded-md shadow-md bg-slate-50 relative">
+<div class="mx-auto w-full p-2 pt-6 md:max-w-md">
+  <form
+    [formGroup]="newUserForm"
+    class="relative w-[32rem] rounded-md border border-slate-100 bg-slate-50 px-6 py-2 shadow-md"
+  >
     @if (isLoading()) {
-      <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-slate-50 rounded-md shadow-md z-10 opacity-50">
+      <div
+        class="absolute top-0 left-0 z-10 flex h-full w-full items-center justify-center rounded-md bg-slate-50 opacity-50 shadow-md"
+      >
         <h2 class="text-2xl font-semibold text-slate-800">Saving...</h2>
       </div>
     }
@@ -12,25 +16,29 @@
         [id]="'firstName'"
         [formControl]="newUserForm.controls['firstName']"
         [label]="'First Name'"
-        required />
+        required
+      />
 
       <app-text-input
         [id]="'lastName'"
         [formControl]="newUserForm.controls['lastName']"
         [label]="'Last Name'"
-        required />
+        required
+      />
 
       <app-text-input
         [id]="'username'"
         [formControl]="newUserForm.controls['username']"
         [label]="'Username'"
-        required />
+        required
+      />
 
       <app-text-input
         [id]="'dob'"
         [formControl]="newUserForm.controls['dob']"
         [label]="'Date of Birth'"
-        [type]="'date'" />
+        [type]="'date'"
+      />
 
       <div>
         <label class="simple-form-label required">Gender</label>
@@ -46,17 +54,20 @@
         [formControl]="newUserForm.controls['email']"
         [label]="'Email'"
         [type]="'email'"
-        required />
+        required
+      />
 
       <app-text-input
         [id]="'phone'"
         [formControl]="newUserForm.controls['phone']"
-        [label]="'Phone'" />
+        [label]="'Phone'"
+      />
 
       <app-text-input
         [id]="'bio'"
         [formControl]="newUserForm.controls['bio']"
-        [label]="'Bio'" />
+        [label]="'Bio'"
+      />
     </div>
     <div class="mt-4 flex justify-end">
       <button
