@@ -5,12 +5,7 @@ import { norskTlfValidator } from '@/_helpers/validation';
 import { CreateUserDto } from '@/_models/User';
 import { UsersService } from '@/_services/users.service';
 import { Component, effect, inject, OnInit, signal } from '@angular/core';
-import {
-  FormsModule,
-  NonNullableFormBuilder,
-  ReactiveFormsModule,
-  Validators
-} from '@angular/forms';
+import { FormsModule, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TextInputComponent } from '../../_components/text-input/text-input.component';
 

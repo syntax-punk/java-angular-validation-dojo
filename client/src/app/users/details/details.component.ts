@@ -10,12 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
-  imports: [
-    ButtonComponent,
-    AvatarComponent,
-    UserDetailsSkeletonComponent,
-    CardComponent
-  ],
+  imports: [ButtonComponent, AvatarComponent, UserDetailsSkeletonComponent, CardComponent],
   templateUrl: './details.component.html'
 })
 export class DetailsComponent implements OnInit {

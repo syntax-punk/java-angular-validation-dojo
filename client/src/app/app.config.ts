@@ -1,10 +1,5 @@
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import {
-  ApplicationConfig,
-  inject,
-  provideAppInitializer,
-  provideZoneChangeDetection
-} from '@angular/core';
+import { ApplicationConfig, inject, provideAppInitializer, provideZoneChangeDetection } from '@angular/core';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { OidcSecurityService, provideAuth } from 'angular-auth-oidc-client';

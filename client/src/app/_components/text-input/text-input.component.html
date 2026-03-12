@@ -1,9 +1,5 @@
 <div>
-  <label
-    class="simple-form-label"
-    [class.required]="required()"
-    for="{{ id() }}"
-  >
+  <label class="simple-form-label" [class.required]="required()" for="{{ id() }}">
     {{ label() }}
   </label>
   <input
@@ -19,19 +15,15 @@
   }
   @if (control.hasError('minlength')) {
     <div class="invalid-feedback">
-      {{ label() }} must be at least
-      {{ control.errors?.['minlength'].requiredLength }} characters
+      {{ label() }} must be at least {{ control.errors?.['minlength'].requiredLength }} characters
     </div>
   }
   @if (control.hasError('maxlength')) {
     <div class="invalid-feedback">
-      {{ label() }} must be not longer than
-      {{ control.errors?.['maxlength'].requiredLength }} characters
+      {{ label() }} must be not longer than {{ control.errors?.['maxlength'].requiredLength }} characters
     </div>
   }
   @if (control.hasError('phone')) {
-    <div class="invalid-feedback">
-      {{ label() }} must be a valid Norwegian phone number
-    </div>
+    <div class="invalid-feedback">{{ label() }} must be a valid Norwegian phone number</div>
   }
 </div>

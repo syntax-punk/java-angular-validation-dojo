@@ -3,18 +3,11 @@
   @if (loading()) {
     <app-user-card-skeleton />
   } @else if (usersList().length > 0) {
-    <ul
-      class="flex h-full w-full flex-row flex-wrap gap-x-2 gap-y-12 p-4 md:w-[80%]"
-    >
+    <ul class="flex h-full w-full flex-row flex-wrap gap-x-2 gap-y-12 p-4 md:w-[80%]">
       @for (user of usersList(); track user.id) {
-        <li
-          class="flex flex-col items-center justify-center gap-2"
-          routerLink="/users/{{ user.id }}"
-        >
+        <li class="flex flex-col items-center justify-center gap-2" routerLink="/users/{{ user.id }}">
           <app-avatar size="md" [src]="user.photoUrl ?? ''" alt="User photo" />
-          <p class="text-base font-semibold text-neutral-100">
-            &#64;{{ user.username }}
-          </p>
+          <p class="text-base font-semibold text-neutral-100">&#64;{{ user.username }}</p>
         </li>
       }
     </ul>

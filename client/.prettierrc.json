@@ -10,7 +10,7 @@
   "bracketSpacing": true,
   "arrowParens": "avoid",
   "trailingComma": "none",
-  "printWidth": 80,
+  "printWidth": 120,
   "htmlWhitespaceSensitivity": "ignore",
   "overrides": [
     {

@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "format": "prettier --write \"src/**/*.{ts,html,scss,css}\"",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "e2e:cli": "npx playwright test"
   },
   "private": true,
   "dependencies": {
