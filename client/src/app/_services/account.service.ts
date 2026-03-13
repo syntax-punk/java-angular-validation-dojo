@@ -16,10 +16,7 @@ export class AccountService {
   private usersService = inject(UsersService);
   private baseUrl = 'https://localhost:5003/api/';
 
-  isAuthenticated = toSignal(
-    this.oidc.isAuthenticated$.pipe(map(r => r.isAuthenticated)),
-    { initialValue: false }
-  );
+  isAuthenticated = toSignal(this.oidc.isAuthenticated$.pipe(map(r => r.isAuthenticated)), { initialValue: false });
 
   userData = toSignal(this.oidc.userData$.pipe(map(r => r.userData)), {
     initialValue: null

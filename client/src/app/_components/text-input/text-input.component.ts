@@ -1,10 +1,5 @@
 import { booleanAttribute, Component, input, Self } from '@angular/core';
-import {
-  ControlValueAccessor,
-  FormControl,
-  NgControl,
-  ReactiveFormsModule
-} from '@angular/forms';
+import { ControlValueAccessor, FormControl, NgControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-text-input',

@@ -7,25 +7,15 @@ import { Router } from '@angular/router';
   selector: 'app-nav',
   imports: [ButtonComponent],
   template: `
-    <nav
-      class="sticky top-0 z-50 flex h-16 w-full items-center justify-between gap-6 bg-purple-950 px-4"
-    >
-      <span
-        class="cursor-pointer text-lg font-semibold tracking-wide text-white"
-        (click)="router.navigate(['/'])"
-      >
+    <nav class="sticky top-0 z-50 flex h-16 w-full items-center justify-between gap-6 bg-purple-950 px-4">
+      <span class="cursor-pointer text-lg font-semibold tracking-wide text-white" (click)="router.navigate(['/'])">
         Lonely Souls
       </span>
 
       @if (accountService.isAuthenticated()) {
-        <div
-          id="greetings-title"
-          class="flex flex-1 items-center justify-center gap-4"
-        >
+        <div id="greetings-title" class="flex flex-1 items-center justify-center gap-4">
           <span class="text-sm font-semibold text-purple-200">
-            {{ greeting }}, &#64;{{
-              accountService.userData()?.preferred_username
-            }}
+            {{ greeting }}, &#64;{{ accountService.userData()?.preferred_username }}
           </span>
           @if (accountService.photoUrl()) {
             <img
@@ -37,12 +27,7 @@ import { Router } from '@angular/router';
             <div
               class="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500 text-sm font-bold text-white ring-2 ring-purple-400"
             >
-              {{
-                accountService
-                  .userData()
-                  ?.preferred_username?.charAt(0)
-                  ?.toUpperCase()
-              }}
+              {{ accountService.userData()?.preferred_username?.charAt(0)?.toUpperCase() }}
             </div>
           }
         </div>
@@ -61,16 +46,7 @@ import { Router } from '@angular/router';
 export class NavComponent {
   accountService = inject(AccountService);
   router = inject(Router);
-
-  private greetings = [
-    'Heisann',
-    'Hey',
-    'Welcome back',
-    'Good to see you',
-    'Howdy',
-    'Yo'
-  ];
-  greeting = this.greetings[Math.floor(Math.random() * this.greetings.length)];
+  greeting = 'Welcome back';
 
   logout() {
     this.accountService.logout();

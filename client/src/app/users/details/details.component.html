@@ -8,34 +8,23 @@
         </h2>
       </div>
     </div>
-    <div
-      class="grid grid-cols-1 gap-4 rounded border border-purple-800 bg-white p-4 md:grid-cols-2"
-    >
+    <div class="grid grid-cols-1 gap-4 rounded border border-purple-800 bg-white p-4 md:grid-cols-2">
       <div>
-        <label [htmlFor]="'dob'" class="mb-1 block text-xs text-slate-950">
-          Date of Birth
-        </label>
+        <label [htmlFor]="'dob'" class="mb-1 block text-xs text-slate-950">Date of Birth</label>
         <div id="dob" class="font-medium font-semibold text-slate-700">
           {{ user?.dob || '-' }}
         </div>
       </div>
       <div>
-        <label [htmlFor]="'gender'" class="mb-1 block text-xs text-slate-950">
-          Gender
-        </label>
+        <label [htmlFor]="'gender'" class="mb-1 block text-xs text-slate-950">Gender</label>
         <div id="gender" class="font-medium text-slate-700 capitalize">
           {{ user?.gender || '-' }}
         </div>
       </div>
     </div>
     <div class="mt-6">
-      <label [htmlFor]="'bio'" class="mb-1 block text-xs text-slate-950">
-        Bio
-      </label>
-      <div
-        id="bio"
-        class="h-[150px] rounded border border-purple-800 bg-white p-4 whitespace-pre-line text-slate-700"
-      >
+      <label [htmlFor]="'bio'" class="mb-1 block text-xs text-slate-950">Bio</label>
+      <div id="bio" class="h-[150px] rounded border border-purple-800 bg-white p-4 whitespace-pre-line text-slate-700">
         {{ user?.bio || 'No bio provided.' }}
       </div>
     </div>
@@ -49,11 +38,7 @@
           stroke="currentColor"
           stroke-width="2"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M15 19l-7-7 7-7"
-          />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
         </svg>
         Back
       </app-button>

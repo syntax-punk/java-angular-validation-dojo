@@ -22,9 +22,7 @@ import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
     }
   `
 })
-export class FormFieldErrorComponent<
-  T extends { [K in keyof T]: AbstractControl<unknown, unknown> }
-> {
+export class FormFieldErrorComponent<T extends { [K in keyof T]: AbstractControl<unknown, unknown> }> {
   fGroup = input.required<FormGroup<T>>();
   cName = input.required<keyof T>();
   errorType = input<CustomFormErrorType>('required');
@@ -36,10 +34,7 @@ export class FormFieldErrorComponent<
   }
 
   get isInvalidAndTouched() {
-    return (
-      this.getControl(this.cName()).invalid &&
-      this.getControl(this.cName()).touched
-    );
+    return this.getControl(this.cName()).invalid && this.getControl(this.cName()).touched;
   }
 
   get errors() {

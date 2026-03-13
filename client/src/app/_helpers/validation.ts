@@ -17,9 +17,7 @@ export const TLF_PATTERNS = {
   NO: /^[4-9]\d{7}$/
 };
 
-export function norskTlfValidator(
-  control: AbstractControl
-): { [key in CustomFormErrorType]?: boolean } | null {
+export function norskTlfValidator(control: AbstractControl): { [key in CustomFormErrorType]?: boolean } | null {
   const tlf = control.value;
 
   if (tlf && !TLF_PATTERNS.NO.test(tlf)) {

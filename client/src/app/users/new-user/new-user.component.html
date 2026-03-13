@@ -62,24 +62,12 @@
         required
       />
 
-      <app-text-input
-        [id]="'phone'"
-        [formControl]="newUserForm.controls['phone']"
-        [label]="'Phone'"
-      />
+      <app-text-input [id]="'phone'" [formControl]="newUserForm.controls['phone']" [label]="'Phone'" />
 
-      <app-text-input
-        [id]="'bio'"
-        [formControl]="newUserForm.controls['bio']"
-        [label]="'Bio'"
-      />
+      <app-text-input [id]="'bio'" [formControl]="newUserForm.controls['bio']" [label]="'Bio'" />
     </div>
     <div class="mt-4 flex justify-end">
-      <app-button
-        type="submit"
-        (clicked)="submitForm()"
-        [disabled]="isLoading() || newUserForm.invalid"
-      >
+      <app-button type="submit" (clicked)="submitForm()" [disabled]="isLoading() || newUserForm.invalid">
         {{ isLoading() ? 'Loading...' : 'Save' }}
       </app-button>
     </div>
